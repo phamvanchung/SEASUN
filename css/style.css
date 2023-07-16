@@ -169,6 +169,14 @@
   transform: rotate(-180deg);
 }
 
+.navbar-light .navbar-toggler {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.navbar-toggler:focus {
+  box-shadow: unset;
+}
+
 .icon-cart {
   color: var(--primary);
   font-size: 25px;
