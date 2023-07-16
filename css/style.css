@@ -38,6 +38,9 @@
   visibility: visible;
   opacity: 1;
 }
+.bg-light-css {
+  background-color: var(--light);
+}
 
 .color-primary {
   color: var(--primary) !important;
@@ -231,7 +234,7 @@
   top: 50%;
   right: -55px;
   margin-top: -1px;
-  background: var(--primary);
+  background: #fff;
 }
 
 .section-title.text-start::before,
@@ -323,14 +326,12 @@
   box-shadow: none;
 }
 
-.footer .copyright {
-  padding: 25px 0;
+.copyright {
+  padding: 10px 0;
   font-size: 15px;
-  border-top: 1px solid rgba(256, 256, 256, 0.1);
-}
-
-.footer .copyright a {
-  color: var(--light);
+  background-color: #fff;
+  color: var(--primary);
+  font-weight: 500;
 }
 
 .footer .footer-menu a {
