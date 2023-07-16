@@ -18,6 +18,12 @@ window.addEventListener("scroll", function () {
   }
 });
 
+var swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
 //scroll to top
 // window.addEventListener("scroll", function () {
 //   if (window.pageYOffset > 300) {
