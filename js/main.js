@@ -18,11 +18,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-var swiper = new Swiper(".mySwiper", {
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
+var swiper = new Swiper(".mySwiper", {});
 
 //scroll to top
 // window.addEventListener("scroll", function () {
