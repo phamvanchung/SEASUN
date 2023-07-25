@@ -89,3 +89,10 @@ function easingFunction(t) {
     ? 0.5 * Math.pow(2 * t, 2)
     : -0.5 * ((2 * t - 1) * (2 * t - 3) - 1);
 }
+
+var swiper = new Swiper(".myTeam", {
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
