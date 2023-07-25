@@ -21,68 +21,68 @@ window.addEventListener("scroll", function () {
 var swiper = new Swiper(".mySwiper", {});
 
 //scroll to top
-// window.addEventListener("scroll", function () {
-//   if (window.pageYOffset > 300) {
-//     var backToTopElement = document.querySelector(".back-to-top");
-//     if (backToTopElement !== null) {
-//       backToTopElement.style.display = "block";
-//       fadeIn(backToTopElement);
-//     }
-//   } else {
-//     var backToTopElement = document.querySelector(".back-to-top");
-//     if (backToTopElement !== null) {
-//       fadeOut(backToTopElement);
-//     }
-//   }
-// });
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > 300) {
+    var backToTopElement = document.querySelector(".back-to-top");
+    if (backToTopElement !== null) {
+      backToTopElement.style.display = "block";
+      fadeIn(backToTopElement);
+    }
+  } else {
+    var backToTopElement = document.querySelector(".back-to-top");
+    if (backToTopElement !== null) {
+      fadeOut(backToTopElement);
+    }
+  }
+});
 
-// document.querySelector(".back-to-top").addEventListener("click", function () {
-//   animateScrollTop(0, 1000, "easeInOutExpo");
-//   return false;
-// });
+document.querySelector(".back-to-top").addEventListener("click", function () {
+  animateScrollTop(0, 1000, "easeInOutExpo");
+  return false;
+});
 
-// function fadeIn(element) {
-//   var opacity = 0;
-//   element.style.opacity = opacity;
-//   var interval = setInterval(function () {
-//     opacity += 0.1;
-//     element.style.opacity = opacity;
-//     if (opacity >= 1) {
-//       clearInterval(interval);
-//     }
-//   }, 100);
-// }
+function fadeIn(element) {
+  var opacity = 0;
+  element.style.opacity = opacity;
+  var interval = setInterval(function () {
+    opacity += 0.1;
+    element.style.opacity = opacity;
+    if (opacity >= 1) {
+      clearInterval(interval);
+    }
+  }, 100);
+}
 
-// function fadeOut(element) {
-//   var opacity = 1;
-//   element.style.opacity = opacity;
-//   var interval = setInterval(function () {
-//     opacity -= 0.1;
-//     element.style.opacity = opacity;
-//     if (opacity <= 0) {
-//       element.style.display = "none";
-//       clearInterval(interval);
-//     }
-//   }, 100);
-// }
+function fadeOut(element) {
+  var opacity = 1;
+  element.style.opacity = opacity;
+  var interval = setInterval(function () {
+    opacity -= 0.1;
+    element.style.opacity = opacity;
+    if (opacity <= 0) {
+      element.style.display = "none";
+      clearInterval(interval);
+    }
+  }, 100);
+}
 
-// function animateScrollTop(to, duration, easing) {
-//   var start = window.pageYOffset || document.documentElement.scrollTop;
-//   var currentTime = 0;
-//   var increment = 20;
+function animateScrollTop(to, duration, easing) {
+  var start = window.pageYOffset || document.documentElement.scrollTop;
+  var currentTime = 0;
+  var increment = 20;
 
-//   var animateScroll = function () {
-//     currentTime += increment;
-//     var easeValue = easingFunction(currentTime / duration);
-//     var scrollTop = easeValue * (to - start) + start;
-//     window.scrollTo(0, scrollTop);
-//     if (currentTime < duration) {
-//       setTimeout(animateScroll, increment);
-//     }
-//   };
+  var animateScroll = function () {
+    currentTime += increment;
+    var easeValue = easingFunction(currentTime / duration);
+    var scrollTop = easeValue * (to - start) + start;
+    window.scrollTo(0, scrollTop);
+    if (currentTime < duration) {
+      setTimeout(animateScroll, increment);
+    }
+  };
 
-//   animateScroll();
-// }
+  animateScroll();
+}
 
 function easingFunction(t) {
   return t < 0.5
