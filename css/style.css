@@ -568,7 +568,7 @@ small {
   border-bottom: 1px dashed var(--primary);
 }
 
-.view-more span {
+.view-more a {
   padding: 10px 20px;
   width: fit-content;
   margin: 0 auto;
