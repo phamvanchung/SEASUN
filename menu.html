@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>SEA SUN</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+  <!-- Favicon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ==============================header========================= -->
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border color-primary" style="width: 3rem; height: 3rem" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Navbar & Hero Start -->
+  <div class="position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light-blue px-4 px-lg-5 py-3 py-lg-0">
+      <a href="index.html" class="navbar-brand p-0">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+      </a>
+      <div class="d-flex justify-content-between align-items-center" style="width: 100px">
+        <i class="fa-solid fa-cart-shopping icon-cart hidden-icon"><span>0</span></i>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0 pe-4">
+          <a href="index.html" class="nav-item nav-link ">Home</a>
+          <a href="about.html" class="nav-item nav-link">our story</a>
+          <a href="service.html" class="nav-item nav-link">Service</a>
+          <a href="menu.html" class="nav-item nav-link">Product</a>
+          <a href="menu.html" class="nav-item nav-link active">News</a>
+          <a href="contact.html" class="nav-item nav-link">Contact</a>
+        </div>
+        <a href="fast-processing.html" class="btn btn-info p-2 text-white">Fast processing</a>
+        <i class="fa-solid fa-cart-shopping icon-cart block-icon"><span>0</span></i>
+      </div>
+    </nav>
+    <div class="py-5 hero-header mb-5 position-relative">
+      <div class="container position-absolute start-50 translate-middle" style="top: 65%">
+        <div class="col-lg-12 text-center hero-header-text">
+          <h1 class="display-3 color-primary ff-secondary">
+            News & Blog
+          </h1>
+          <p class="color-primary display-6 ff-magdelin mb-4 pb-2 text-uppercase">
+            " Quality creates the brand "
+          </p>
+          <div class="input-group mx-auto border-8">
+            <input type="text" class="form-control input-home" placeholder="What are you looking for?" />
+            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"
+                style="color: #1855a0; font-size: 25px"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Navbar & Hero End -->
+  <!-- end header================================== -->
+
+
+  <!-- ==================title=============== -->
+  <div class="container pt-5">
+    <div class="text-center fadeInUp">
+      <h5 class="section-title  text-center color-primary fw-normal">
+        News & Blog
+      </h5>
+      <h1 class="mb-5 color-primary ff-secondary">Update everyday</h1>
+    </div>
+    <!-- =====================end tittle================== -->
+
+
+    <!-- =======================switch tab==================== -->
+
+    <div class="tab-class text-center fadeInUp">
+      <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
+        <li class="nav-item">
+          <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="102.081" height="89.321"
+              viewBox="0 0 102.081 89.321">
+              <path id="newspaper-solid"
+                d="M19.14,44.76A12.772,12.772,0,0,1,31.9,32H89.321a12.772,12.772,0,0,1,12.76,12.76v63.8a12.772,12.772,0,0,1-12.76,12.76H15.95A15.946,15.946,0,0,1,0,105.371V51.14a6.38,6.38,0,0,1,12.76,0v54.231a3.19,3.19,0,0,0,6.38,0ZM31.9,49.545V65.5a4.774,4.774,0,0,0,4.785,4.785h22.33A4.774,4.774,0,0,0,63.8,65.5V49.545a4.774,4.774,0,0,0-4.785-4.785H36.686A4.774,4.774,0,0,0,31.9,49.545Zm41.471-1.6a3.2,3.2,0,0,0,3.19,3.19h9.57a3.19,3.19,0,0,0,0-6.38h-9.57A3.2,3.2,0,0,0,73.371,47.95Zm0,19.14a3.2,3.2,0,0,0,3.19,3.19h9.57a3.19,3.19,0,0,0,0-6.38h-9.57A3.2,3.2,0,0,0,73.371,67.09ZM31.9,86.231a3.2,3.2,0,0,0,3.19,3.19H86.131a3.19,3.19,0,0,0,0-6.38H35.09A3.2,3.2,0,0,0,31.9,86.231Zm0,19.14a3.2,3.2,0,0,0,3.19,3.19H86.131a3.19,3.19,0,0,0,0-6.38H35.09A3.2,3.2,0,0,0,31.9,105.371Z"
+                transform="translate(0 -32)" fill="#1bb1e6" />
+            </svg>
+            <h6 class="ps-3 mb-0 color-primary d-none d-md-block">NEWS</h6>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="91.53" height="91.511"
+              viewBox="0 0 91.53 91.511">
+              <path id="blogger-b"
+                d="M91.272,71.05a5.891,5.891,0,0,0-2.554-3.78,24.67,24.67,0,0,0-5.108-.552c-4.107-.184-4.556-.266-5.864-1.022-2.064-1.205-2.615-2.513-2.636-6.027-.02-6.743-2.82-13.015-8.357-18.655A31.177,31.177,0,0,0,53.37,32.74c-1.206-.368-3.9-.49-12.934-.593-14.18-.163-17.326.123-22.148,2.043A29.037,29.037,0,0,0,.7,54.745c-.429,1.8-.531,4.679-.633,21.229-.123,20.739.02,23.783,1.308,27.89C4.558,114,13.609,121.5,22.7,123.132c3.024.552,40.313.674,44.134.163a27.364,27.364,0,0,0,16.734-8.561,27.972,27.972,0,0,0,7.192-12.688C91.762,98.45,91.681,72.869,91.272,71.05ZM25.46,58.055c1.594-1.614,2.043-1.675,12.014-1.675,8.97,0,9.276.02,10.584.695A4.5,4.5,0,0,1,50.8,61.549a4.829,4.829,0,0,1-2.513,4.413c-.94.593-1.492.633-10.277.674a99.879,99.879,0,0,1-10.38-.245c-3.392-.96-4.659-5.823-2.166-8.336ZM64.649,98.879l-3.044.49-15.835.184c-13.914.163-17.837-.082-18.573-.409a5.68,5.68,0,0,1-3.044-3.964A5.768,5.768,0,0,1,25.828,90.6c1.451-1.308,2.084-1.349,19.881-1.369,18.307-.02,18.205-.02,19.942,1.594a5.046,5.046,0,0,1-1,8.05Z"
+                transform="translate(-0.027 -32.108)" fill="#1bb1e6" />
+            </svg>
+            <h6 class="ps-3 mb-0 color-primary  d-none d-md-block">BLOGS</h6>
+          </a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="tab-1" class="tab-pane fade show p-0 active">
+          <section class="max-container news chieu-dai">
+            <ul class="reset-list">
+              <li>
+                <img src="images/news7.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      Bream price drop comes as industry’s largest market crashing down
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    The latest accounts for Valencia-based Avramar show the company's debt increased around €30m between
+                    2020 and 2021, hitting €438m at the end of the latter
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="images/news8.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      China fishing firm fall to H1 loss player seeks solution to €400m debt
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    Chinese seafood company Shanghai Kaichuang Marine International expects to report a loss of CNY 24.3
+                    for the first half of 2023, according to a statement from the company. [...]...
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+
+              <li>
+                <img src="images/news12.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>China’s Shanghai Kaichuang plans €30m Albo tuna plant in Spain...
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    Chinese seafood giant Shanghai Kaichuang plans to build a €30.4m plant in Spain to combine
+                    production from two leased facilities operated by its Albo subsidiary...
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+
+              <li>
+                <img src="images/news9.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>NASDAQ: Norway salmon spot prices take a fall in week 29...
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">Spot prices for Norwegian farmed salmon saw a fairly steep fall in week 29
+                    of 2023, according to the NASDAQ Salmon Index...
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="images/news10.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      DataSalmon: US, Brazilian market prices creep up in week 28...
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+
+
+                    Spot prices for farmed Chilean salmon sold to the US saw a second week of lifts after seven
+                    successive weeks of decline, while there was another improvement in Brazil...
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="images/news11.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+
+                      Chinese wild salmon processor sees uptick in international orders...
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+
+                    Chinese salmon processors have seen a rebound in export orders since July after a sluggish first
+                    half of 2023...
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+            </ul>
+        </div>
+        <div id="tab-2" class="tab-pane fade show p-0">
+          <section class="max-container news">
+            <ul class="reset-list">
+              <li>
+                <img src="images/news1.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      Seafood Entrees: Top 3 Delicious Recipes to Get Your Taste Buds
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    You can prepare these delicious seafood cuisines right in your home. Here are the top THREE seafood
+                    entrées for you to try today. Oven Roasted Golden Tilefish Full Recipe: […]
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+
+              <li>
+                <img src="images/news2.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      Seafood Meals: 3 Amazing Seafood Dishes You Should Try Today
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    Seafood meals are also very nutritious, healthy. Many people tend to abstain from seafood meals
+                    because they believe they’re difficult to prepare. However, the truth of the matter is that […]
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+
+              <li>
+                <img src="images/news3.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      Seafood Salad Recipes: Top 3 Great-Tasting Seafood Salads
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    These seafood salad recipes are the perfect for any occasion. What’s even more amazing is that you
+                    don’t have to go to the finest restaurants to enjoy these tasty fish cuisines[…]
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+
+              <li>
+                <img src="images/news4.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      Crab Recipes: 3 Mouthwatering Dishes to Try Tonight
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    Serve it in a salad or soup. Options for crab recipes are almost endless. Even though crab recipes
+                    are quite popular during summer, you can get crabby at any time no matter […]
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="images/news5.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      Seafood Dinner Ideas: 3 Delicious Dishes Guaranteed to Delight
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    It’s also a great way to spruce up your dinner. To that effect, here are a few seafood dinner ideas
+                    to get you going: 1. Shrimp […]
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="images/news6.jpg" alt="">
+                <div class="details">
+                  <a href="" class="news-title">
+                    <h1>
+                      Lobster Recipes: 3 Simple Lobster Recipes for Family Dinners
+                    </h1>
+                  </a>
+                  <a href="" class="date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.625" height="19" viewBox="0 0 16.625 19">
+                      <path id="calendar-solid"
+                        d="M3.562,1.187V2.375H1.781A1.782,1.782,0,0,0,0,4.156V5.937H16.625V4.156a1.782,1.782,0,0,0-1.781-1.781H13.062V1.187a1.187,1.187,0,0,0-2.375,0V2.375H5.937V1.187a1.187,1.187,0,1,0-2.375,0ZM16.625,7.125H0V17.219A1.782,1.782,0,0,0,1.781,19H14.844a1.782,1.782,0,0,0,1.781-1.781Z"
+                        fill="#1bb1e6" />
+                    </svg>
+
+                    <p>6/9/2420</p>
+                  </a>
+                  <div class="news-content">
+                    Try out tonight and impress your family tastebuds for dinner. Grilled Lobster Tails Full Recipe:
+                    TheSpruceEats.com This grilled lobster tails recipe is simple […]
+                  </div>
+                  <button type="button" class="btn btn-info mt-2 me-2 text-white">
+                    See More
+                  </button>
+                </div>
+              </li>
+            </ul>
+        </div>
+
+      </div>
+      <!-- ---------shop pagination------------- -->
+      <section class="max-container padding-all shop-pagination">
+        <ul class="reset-list">
+          <li>
+            <a href="" class="btn-square btn-disabled">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 512"><!--! Font Awesome Free 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+                <path
+                  d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z" />
+              </svg>
+            </a>
+          </li>
+          <li class="d-md-none">1/10</li>
+          <li class="d-none d-md-flex cur-page"><a href="">1</a></li>
+          <li class="d-none d-md-flex"><a href="">2</a></li>
+          <li class="d-none d-md-flex"><a href="">3</a></li>
+          <li>
+            <a href="" class="btn-square btn-disabled">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 512"><!--! Font Awesome Free 6.0.0-beta2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
+                <path
+                  d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- ---------het shop pagination------------- -->
+      </section>
+
+    </div>
+  </div>
+  <!-- ------------------------services end----------------------------- -->
+  <!-- Footer Start -->
+  <div class="footer-wrap">
+    <div class="container-fluid text-light footer bg-light-css">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <h4 class="section-title text-start text-white fw-normal mb-4">
+              Overview
+            </h4>
+            <a class="btn btn-link" href="#">About us</a>
+            <a class="btn btn-link" href="#">Contact us</a>
+            <a class="btn btn-link" href="#">Delivery</a>
+            <a class="btn btn-link" href="#">Quality certification</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="section-title text-start text-white fw-normal mb-4">
+              Contact
+            </h4>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-2"></i>123 CMT8 Street, Ward 15, District 3, Ho Chi Minh Province.
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-2"></i>032 345 6789
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-2"></i>seasun.vn@gmail.com
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="section-title text-start text-white fw-normal mb-4">
+              Opening
+            </h4>
+            <h6 class="text-light fw-normal">Monday - Saturday</h5>
+              <p>09AM - 09PM</p>
+              <h6 class="text-light fw-normal">Sunday</h6>
+              <p>09AM - 10PM</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="section-title text-start text-white fw-normal mb-4">
+              Newsletter
+            </h4>
+            <p>If you have any question or feedback, please feel free to contact us.</p>
+            <div class="position-relative mx-auto" style="max-width: 400px">
+              <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
+              <button type="button" class="btn btn-info py-2 position-absolute top-0 end-0 mt-2 me-2 text-white">
+                SignUp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="text-center">@2023 Sea Sun Inc. All right reserved.</div>
+    </div>
+  </div>
+
+  <a href="#" class="btn btn-lg btn-info btn-lg-square back-to-top"><i class="bi bi-arrow-up text-white"></i></a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
