@@ -1070,3 +1070,65 @@ svg {
   }
 }
 /* ---------------het-shop-pagination----------- */
+
+.wrap-icon {
+  padding: 15px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+.wrap-icon .icon-process {
+  width: 50px;
+  height: 50px;
+}
+
+.wrapper-text-img {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper-text-img .item {
+  width: calc(100% / 3);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #000;
+}
+.wrapper-text-img .item span {
+  padding: 0 20px;
+  text-align: center;
+}
+.btn-cus {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+@media (max-width: 820px) {
+  .img-fish {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+  .wrapper-text-img .item {
+    height: 200px;
+  }
+}
+@media (max-width: 420px) {
+  .wrap-icon .icon-process {
+    width: 30px;
+    height: 30px;
+  }
+  .wrapper-text-img {
+    flex-direction: column-reverse;
+  }
+  .wrapper-text-img .item {
+    width: 100%;
+    height: 300px;
+  }
+  .wrapper-text-img .item-text {
+    height: 150px;
+  }
+}
