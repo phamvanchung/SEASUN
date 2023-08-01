@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>SEA SUN</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <!-- app css -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<!-- style rieng product detail -->
+<style>
+  :root {
+    --top-header-size: 30px;
+    --mid-header-size: 80px;
+    --bottom-header-size: 45px;
+    --btn-bg: #000;
+    --btn-border-color: #000;
+    --btn-color: #fff;
+  }
+
+  .pdproduct-img>img {
+    max-width: 70%;
+  }
+
+  .pdproduct-row {
+    padding: 45px 0;
+  }
+
+  .pdproduct-img-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .pdcontainer {
+    max-width: 1366px;
+    margin: auto;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .bg-second {
+    background-color: var(--second-bg-color);
+  }
+
+  .bg-main {
+    background-color: var(--main-bg-color);
+  }
+
+  .text-red {
+    color: var(--red);
+  }
+
+  .mobile-menu {
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    display: none;
+  }
+
+  .mb-menu-close {
+    display: none;
+  }
+
+  .top-header {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-header ul {
+    display: flex;
+  }
+
+  .top-header a {
+    font-size: 13px;
+  }
+
+  ul.devided>li {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid;
+  }
+
+  ul.devided>li:last-child {
+    border-right: none;
+  }
+
+  /* dropdown */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .dropdown-content {
+    /* display: flex; */
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: calc(100% + 10px);
+    background-color: #fff;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0;
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 2;
+  }
+
+  .dropdown-content>li>a {
+    padding: 10px;
+  }
+
+  .dropdown-content>li:hover {
+    color: var(--red);
+  }
+
+  /* end dropdown */
+
+  .mid-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: var(--main-bg-color);
+  }
+
+  .logo {
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .mb-logo {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .search {
+    width: 600px;
+    height: 40px;
+    position: relative;
+  }
+
+  .search input {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    outline: 0;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--second-bg-color);
+  }
+
+  .search i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+
+  .user-menu {
+    display: flex;
+  }
+
+  .user-menu>li>a {
+    font-size: 30px;
+    margin-left: 15px;
+  }
+
+  .bottom-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-menu {
+    display: flex;
+    height: var(--bottom-header-size);
+  }
+
+  .main-menu>li>a {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    font-weight: 600;
+    height: 100%;
+    text-transform: uppercase;
+  }
+
+  .main-menu>li {
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid transparent;
+  }
+
+  .main-menu>li:hover {
+    border-bottom: 2px solid var(--red);
+  }
+
+  /* mega menu */
+
+  .mega-content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    top: calc(100% + 100px);
+    z-index: 2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0;
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .mega-dropdown:hover .mega-content {
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+  }
+
+  .mega-content h3 {
+    margin: 20px 0;
+    padding-left: 20px;
+  }
+
+  .mega-content ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mega-content ul>li>a {
+    font-weight: normal;
+    padding: 10px 0;
+    border-bottom: 2px dashed #f5f5f5;
+    transition: padding-left 0.2s ease-in-out;
+    margin: 0 20px;
+    text-transform: capitalize;
+  }
+
+  .mega-content ul>li>a:hover {
+    padding-left: 10px;
+  }
+
+  .mega-content ul>li {
+    border-bottom: 2px solid transparent;
+  }
+
+  .mega-content ul>li:hover {
+    border-bottom: 2px solid var(--red);
+  }
+
+  /* end mega menu */
+
+  .box {
+    padding: 20px;
+  }
+
+  .hero {
+    height: calc(100vh - (var(--top-header-size) + var(--mid-header-size) + var(--bottom-header-size)));
+    padding: 0 20px;
+  }
+
+  .slider,
+  .slider .pdcontainer {
+    height: 100%;
+    position: relative;
+  }
+
+  .slide {
+    height: 0;
+    position: absolute;
+    display: flex;
+    inset: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .slide.active {
+    visibility: visible;
+    height: 100%;
+  }
+
+  .slide .info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .info-content h2 {
+    font-size: 70px;
+    margin: 10px 0 35px;
+  }
+
+  .info-content button {
+    margin-top: 30px;
+  }
+
+  .slide .img {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-flat {
+    display: inline-block;
+    border: 2px solid var(--btn-border-color);
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    padding: 15px 35px;
+    font-size: 15px;
+    outline: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .btn-hover {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-hover:hover {
+    background-color: var(--btn-color);
+    color: var(--btn-bg);
+  }
+
+  .slide-controll {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: 0;
+    border: 0;
+    border-radius: 50%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .slide-controll:hover {
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+  }
+
+  .slide-next {
+    right: -80px;
+  }
+
+  .slide-prev {
+    left: -80px;
+  }
+
+  .slider:hover .slide-next {
+    right: 50px;
+  }
+
+  .slider:hover .slide-prev {
+    left: 50px;
+  }
+
+  /* slide animation */
+  .top-down {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .slide.active .top-down {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .right-left {
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .slide.active .right-left {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .left-right {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .slide.active .left-right {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* end slide animation */
+
+  .trans-delay-0-2 {
+    transition-delay: 0.2s;
+  }
+
+  .trans-delay-0-4 {
+    transition-delay: 0.4s;
+  }
+
+  .trans-delay-0-6 {
+    transition-delay: 0.6s;
+  }
+
+  .trans-delay-0-8 {
+    transition-delay: 0.8s;
+  }
+
+  .promotion {
+    padding: 15px;
+  }
+
+  .promotion [class*="col-"] {
+    padding: 15px;
+  }
+
+  .promotion-box {
+    display: flex;
+    background-color: var(--third-bg-color);
+    position: relative;
+  }
+
+  .promotion-box .text {
+    flex-grow: 1;
+    padding: 20px;
+  }
+
+  .promotion-box .text h3 {
+    font-size: 25px;
+  }
+
+  .promotion-box .text button {
+    margin-top: 30px;
+  }
+
+  .promotion-box img {
+    width: 150px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .promotion-box:hover img {
+    transform: scale(1.1);
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-header,
+  .section-footer {
+    text-align: center;
+    margin: 80px 0 70px;
+    text-transform: uppercase;
+  }
+
+  .section-header h2 {
+    font-size: 40px;
+  }
+
+  .product-card {
+    background-color: var(--main-bg-color);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .product-card:hover {
+    background-color: var(--second-bg-color);
+  }
+
+  .product-card-img {
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-card-img img {
+    max-height: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .product-card-img img:nth-child(2) {
+    display: none;
+  }
+
+  .product-card:hover .product-card-img img:nth-child(1) {
+    display: none;
+  }
+
+  .product-card:hover .product-card-img img:nth-child(2) {
+    display: block;
+  }
+
+  .product-card-info {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .product-card-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .product-card-price {
+    font-size: 15px;
+  }
+
+  .product-card-price .curr-price {
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--red);
+  }
+
+  .product-btn {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .product-card:hover .product-btn {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .product-btn>*~* {
+    margin-left: 5px;
+  }
+
+  .pdcontainer {
+    height: 100%;
+    position: relative;
+  }
+
+  .pdcontainer {
+    max-width: 1366px;
+    margin: auto;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .pdbreadcumb {
+    font-weight: 600;
+    padding-left: 20px;
+  }
+
+  .pdbreadcumb a {
+    text-transform: capitalize;
+  }
+
+  .pdbreadcumb a:hover {
+    color: red;
+  }
+
+  .pdbreadcumb span {
+    margin: 0 15px;
+  }
+
+  .bx {
+    font-family: 'boxicons' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    display: inline-block;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .bxs-chevrons-right:before {
+    content: "\ec94";
+  }
+
+  .pdrow {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  .pdproduct-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pdproduct-img-item {
+    width: 90px;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 1px solid;
+  }
+
+  .product-img-item:hover {
+    background-color: darkblue;
+  }
+
+  .pdproduct-info>*~* {
+    margin-top: 25px;
+  }
+
+  .pdproduct-info-detail-title {
+    font-weight: 600;
+    color: gray;
+  }
+
+  .pdproduct-description {
+    font-size: 18px;
+    text-align: justify;
+  }
+
+  .pdproduct-info-price {
+    font-weight: 600;
+    font-size: 30px;
+    color: darkred;
+  }
+
+  .rating i {
+    color: #ffc107;
+  }
+
+  .pdproduct-description {
+    font-size: 18px;
+    text-align: justify;
+    padding-right: 30px;
+  }
+
+  .pdproduct-info-price {
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--red);
+  }
+
+  .pdproduct-quantity-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .pdproduct-quantity {
+    margin: 0 10px;
+    font-size: 25px;
+  }
+
+  .ơdproduct-quantity-btn {
+    height: 30px;
+    width: 30px;
+    background-color: gray;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .ơdproduct-quantity-btn i {
+    font-size: 20px;
+    color: var(--main-bg-color);
+  }
+
+  .pdbox-header {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  .pdproduct-detail-description {
+    position: relative;
+    margin-bottom: 90px;
+  }
+
+  .pdproduct-detail-description-content {
+    text-align: justify;
+    line-height: 26px;
+    font-size: 16px;
+    height: 600px;
+    overflow-y: hidden;
+    position: relative;
+  }
+
+  .pdproduct-detail-description-content.active {
+    height: max-content;
+  }
+
+  .btn-view-description {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .user-rate {
+    margin-bottom: 40px;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .user-avt {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .user-name {
+    margin-left: 20px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .name {
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+
+  .user-rate-content {
+    line-height: 25px;
+  }
+
+
+
+
+  [class*="pdcol-"] {
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+  /* grid */
+  .pdcol-1 {
+    width: 8.33%;
+  }
+
+  .pdcol-2 {
+    width: 16.66%;
+  }
+
+  .pdcol-3 {
+    width: 25%;
+  }
+
+  .pdcol-4 {
+    width: 33.33%;
+  }
+
+  .pdcol-5 {
+    width: 41.66%;
+  }
+
+  .pdcol-6 {
+    width: 50%;
+  }
+
+  .pdcol-7 {
+    width: 58.33%;
+  }
+
+  .pdcol-8 {
+    width: 66.66%;
+  }
+
+  .pdcol-9 {
+    width: 75%;
+  }
+
+  .pdcol-10 {
+    width: 83.33%;
+  }
+
+  .pdcol-11 {
+    width: 91.66%;
+  }
+
+  .pdcol-12 {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .pdcol-5 {
+      width: 100%;
+    }
+
+    .pdcol-md-12 {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    .pdcol-md-12 {
+      width: 58.33%;
+    }
+  }
+
+  /* medium screen */
+
+  @media only screen and (max-width: 1280px) {
+    .pdcol-md-1 {
+      width: 8.33%;
+    }
+
+    .pdcol-md-2 {
+      width: 16.66%;
+    }
+
+    .pdcol-md-3 {
+      width: 25%;
+    }
+
+    .pdcol-md-4 {
+      width: 33.33%;
+    }
+
+    .pdcol-md-5 {
+      width: 41.66%;
+    }
+
+    .pdcol-md-6 {
+      width: 50%;
+    }
+
+    .pdcol-md-7 {
+      width: 58.33%;
+    }
+
+    .pdcol-md-8 {
+      width: 66.66%;
+    }
+
+    .pdcol-md-9 {
+      width: 75%;
+    }
+
+    .pdcol-md-10 {
+      width: 83.33%;
+    }
+
+    .pdcol-md-11 {
+      width: 91.66%;
+    }
+
+    .mobile-menu {
+      display: flex;
+    }
+
+    .header-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100%;
+      overflow-x: auto;
+      position: fixed;
+      top: 0;
+      right: 100%;
+      background-color: var(--main-bg-color);
+      z-index: 99;
+      transition: right 0.3s ease-in-out;
+    }
+
+    .header-wrapper.active {
+      right: 0;
+    }
+
+    .logo {
+      font-size: 30px;
+    }
+
+    .mb-menu-close {
+      display: block;
+      position: absolute;
+      right: 43px;
+      top: 18px;
+      z-index: 99;
+      font-size: 25px;
+    }
+
+    .top-header {
+      display: none;
+    }
+
+    .mid-header {
+      display: flex;
+      flex-direction: column;
+      padding: 0 20px;
+      height: unset;
+    }
+
+    .mid-header>* {
+      margin-top: 15px;
+    }
+
+    .search {
+      width: 100%;
+    }
+
+    .bottom-header {
+      justify-content: flex-start;
+    }
+
+    .main-menu {
+      flex-direction: column;
+      height: unset;
+    }
+
+    .main-menu a {
+      padding: 10px 0;
+    }
+
+    .mega-dropdown>a>i {
+      display: none;
+    }
+
+    .mega-content {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: unset;
+      background-color: transparent;
+      padding-left: 45px;
+    }
+
+    .mega-content h3 {
+      font-size: 15px;
+      padding: 5px 0;
+      margin: unset;
+    }
+
+    .mega-content ul>li>a {
+      padding: 5px 0;
+    }
+
+    .mega-content .img-row {
+      display: none;
+    }
+
+    .hero {
+      height: calc(80vh - (var(--top-header-size) + var(--mid-header-size) + var(--bottom-header-size)));
+      margin-bottom: 60px;
+    }
+
+    .slide {
+      flex-direction: column-reverse;
+    }
+
+    .slide>.info,
+    .slide>.img {
+      width: 100%;
+    }
+
+    .slide>.img>img {
+      max-width: 300px;
+    }
+
+    .info-content p {
+      display: none;
+    }
+
+    .info-content button {
+      margin-top: unset;
+    }
+
+    .slide-next,
+    .slider:hover .slide-next {
+      right: 40%;
+    }
+
+    .slide-prev,
+    .slider:hover .slide-prev {
+      left: 40%;
+    }
+
+    .slide-next,
+    .slide-prev {
+      bottom: -70px;
+      transform: unset;
+      top: unset;
+    }
+
+    .product-btn {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .sp-item-info {
+      padding-right: 35px;
+    }
+
+    .blog {
+      flex-wrap: wrap;
+    }
+
+    .blog-img,
+    .blog-info {
+      width: 100%;
+    }
+
+    .filter-toggle-box {
+      display: block;
+    }
+
+    .filter-col {
+      position: fixed;
+      width: 100%;
+      background-color: var(--main-bg-color);
+      z-index: 98;
+      left: 100%;
+      height: 80vh;
+      overflow-y: scroll;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      transition: left 0.2s ease-in-out;
+    }
+
+    .filter-col.active {
+      left: 0;
+    }
+
+    .pagination {
+      justify-content: center;
+    }
+
+  }
+
+  /* small screen */
+
+  @media only screen and (max-width: 750px) {
+    .pdcol-sm-1 {
+      width: 8.33%;
+    }
+
+    .pdcol-sm-2 {
+      width: 16.66%;
+    }
+
+    .pdcol-sm-3 {
+      width: 25%;
+    }
+
+    .pdcol-sm-4 {
+      width: 33.33%;
+    }
+
+    .pdcol-sm-5 {
+      width: 41.66%;
+    }
+
+    .pdcol-sm-6 {
+      width: 50%;
+    }
+
+    .pdcol-sm-7 {
+      width: 58.33%;
+    }
+
+    .pdcol-sm-8 {
+      width: 66.66%;
+    }
+
+    .pdcol-sm-9 {
+      width: 75%;
+    }
+
+    .pdcol-sm-10 {
+      width: 83.33%;
+    }
+
+    .pdcol-sm-11 {
+      width: 91.66%;
+    }
+
+    .pdcol-sm-12 {
+      width: 100%;
+    }
+
+    .hero {
+      height: calc(70vh - (var(--top-header-size) + var(--mid-header-size) + var(--bottom-header-size)));
+      margin-bottom: 60px;
+    }
+
+    .info-content h2 {
+      margin: unset;
+      font-size: 40px;
+    }
+
+    .promotion {
+      padding-top: 45px;
+    }
+
+    .promotion-box {
+      height: unset;
+    }
+  }
+</style>
+
+
+<!-- ket thuc style -->
+
+
+<body>
+  <div class="bg-white p-0">
+    <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border color-primary" style="width: 3rem; height: 3rem" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Navbar & Hero Start -->
+    <div class="position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light-blue px-4 px-lg-5 py-3 py-lg-0">
+        <a href="index.html" class="navbar-brand p-0">
+          <img src="images/logo.png" alt="Logo" class="logo" />
+        </a>
+        <div class="d-flex justify-content-between align-items-center" style="width: 100px">
+          <i class="fa-solid fa-cart-shopping icon-cart hidden-icon"><span>0</span></i>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0 pe-4">
+            <a href="index.html" class="nav-item nav-link ">Home</a>
+            <a href="about.html" class="nav-item nav-link">our story</a>
+            <a href="service.html" class="nav-item nav-link">Service</a>
+            <a href="product.html" class="nav-item nav-link active">Product</a>
+            <a href="menu.html" class="nav-item nav-link ">News</a>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
+          <a href="fast-processing.html" class="btn btn-info p-2 text-white">Fast processing</a>
+          <i class="fa-solid fa-cart-shopping icon-cart block-icon"><span>0</span></i>
+        </div>
+      </nav>
+      <div class="py-5 hero-header mb-5 position-relative">
+        <div class="container position-absolute start-50 translate-middle" style="top: 30%">
+          <div class="col-lg-12 text-center hero-header-text">
+            <h1 class="display-3 color-primary ff-secondary">
+              Fish
+            </h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center text-uppercase color-primary">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Products</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Fish</li>
+              </ol>
+            </nav>
+            <div class="input-group mx-auto border-8">
+              <input type="text" class="form-control input-home" placeholder="What are you looking for?" />
+              <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"
+                  style="color: #1855a0; font-size: 25px"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- detail product  -->
+
+    <!-- product-detail content -->
+    <div class="pdcontainer">
+      <div class="box">
+        <div class="pdbreadcumb">
+          <a href="./index.html">Product</a>
+          <span><i class='bx bxs-chevrons-right'></i></span>
+          <a href="./products.html">Fish</a>
+          <span><i class='bx bxs-chevrons-right'></i></span>
+          <a href="./product-detail.html">Live Grouper</a>
+        </div>
+      </div>
+      <div class="pdrow pdproduct-row">
+        <div class="pdcol-5">
+          <div class="pdproduct-img" id="pdproduct-img">
+            <img src="images/product-1.jpg" alt="">
+          </div>
+          <div class="box">
+            <div class="pdproduct-img-list">
+              <div class="pdproduct-img-item">
+                <img src="images/product-1-2.png" alt="">
+              </div>
+              <div class="pdproduct-img-item">
+                <img src="images/product-1-3.png" alt="">
+              </div>
+              <div class="pdproduct-img-item">
+                <img src="images/product-1-4.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 pdcol-md-12">
+          <div class="pdproduct-info">
+            <h1>
+              Live Grouper
+            </h1>
+            <div class="pdproduct-info-detail">
+              <span class="pdproduct-info-detail-title">Type:</span>
+              <a href="#">Fish</a>
+            </div>
+            <div class="pdproduct-info-detail">
+              <span class="pdproduct-info-detail-title">Rated:</span>
+              <span class="rating">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+              </span>
+            </div>
+            <p class="pdproduct-description">
+              Live grouper fish are a type of fish commonly found in tropical and subtropical waters. They are known for
+              their large size, firm white flesh, and mild, buttery flavor. Live grouper fish are often served in
+              high-end restaurants and are considered a delicacy in many cultures. They are also popular among
+              recreational fishermen due to their challenging size and strength.
+            </p>
+            <div class="pdproduct-info-price">350,000 VND</div>
+            <div class="pdproduct-quantity-wrapper">
+              <span class="pdproduct-quantity-btn">
+                <i class='bx bx-minus'></i>
+              </span>
+              <span class="pdproduct-quantity">1</span>
+              <span class="pdproduct-quantity-btn">
+                <i class='bx bx-plus'></i>
+              </span>
+            </div>
+            <div>
+              <button class="btn-flat btn-hover">add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-header">
+          Description
+        </div>
+        <div class="pdproduct-detail-description">
+          <button class="btn-flat btn-hover btn-view-description" id="view-all-description">
+            view all
+          </button>
+          <div class="pdproduct-detail-description-content">
+            <p>
+              Live grouper is a type of seafood that is highly valued for its firm, white flesh and delicate flavor. It
+              is often served in high-end restaurants and is considered a delicacy in many cultures.
+              <img src="images/product-1-5.png" alt="">
+            <p>
+              Live grouper can be prepared in a variety of ways, including grilling, steaming, baking, or frying. It is
+              often served whole, which makes for an impressive presentation at the table. The fish is typically gutted
+              and scaled, but the head and tail are left intact to enhance its visual appeal.
+            </p>
+            <img src="images/product-1-6.png" alt="">
+            <p>
+              In summary, live grouper is a highly prized seafood that is known for its delicate flavor and impressive
+              size. When prepared and sourced responsibly, it can be enjoyed as part of a healthy and sustainable diet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-header">
+          review
+        </div>
+        <div>
+          <div class="user-rate">
+            <div class="user-info">
+              <div class="user-avt">
+                <img src="images/boyduccon.png" alt="">
+              </div>
+              <div class="user-name">
+                <span class="name">Boy Mỹ Con</span>
+                <span class="rating">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </span>
+              </div>
+            </div>
+            <div class="user-rate-content">
+              "I ordered live grouper from an online seafood retailer and was a bit skeptical about how it would turn
+              out. However, I was pleasantly surprised! The fish arrived alive and well and was packed with ice to keep
+              it fresh during shipping. When I cooked it, the meat was tender and flavorful. I would definitely order it
+              again."
+            </div>
+          </div>
+          <div class="user-rate">
+            <div class="user-info">
+              <div class="user-avt">
+                <img src="images/boyngacon.png" alt="">
+              </div>
+              <div class="user-name">
+                <span class="name">Boy Nga Con</span>
+                <span class="rating">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </span>
+              </div>
+            </div>
+            <div class="user-rate-content">
+              "I had the pleasure of trying the live grouper at a seafood restaurant and it was absolutely amazing! The
+              fish was cooked to perfection and the meat was so tender and juicy. I would definitely recommend it to
+              anyone who loves seafood."
+            </div>
+          </div>
+          <div class="user-rate">
+            <div class="user-info">
+              <div class="user-avt">
+                <img src="images/boymycon.png" alt="">
+              </div>
+              <div class="user-name">
+                <span class="name">Boy Đức Con</span>
+                <span class="rating">
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                  <i class='bx bxs-star'></i>
+                </span>
+              </div>
+            </div>
+            <div class="user-rate-content">
+              "I recently purchased a live grouper from a local fish market and it was one of the best seafood dishes
+              I've ever had. The fish was so fresh and had a delicate flavor that was complemented perfectly by the
+              simple preparation of grilling it with some lemon and herbs. I will definitely be buying it again."
+            </div>
+          </div>
+        </div>
+        <!-- end product-detail content -->
+
+
+        <!--  (end)-->
+
+
+      </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-center mt-5 wrap_pic">
+      <img src="images/pic desktop.png" alt="" class="img-pic d-none d-lg-block">
+      <img src="images/pic tablet mobile.png" alt="" class="img-pic d-block d-lg-none">
+      <div class="text-pic">
+        <div class="wrap_social">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="#fff"
+              d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
+            y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+            <g>
+              <path fill="#fff"
+                d="M12,7c-2.8,0-5,2.2-5,5s2.2,5,5,5s5-2.2,5-5S14.8,7,12,7z M12,15c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3S13.7,15,12,15z" />
+              <path fill="#fff"
+                d="M16.4,2H7.6C4.5,2,2,4.5,2,7.6v8.8C2,19.5,4.5,22,7.6,22h8.8c3.1,0,5.6-2.5,5.6-5.6V7.6C22,4.5,19.5,2,16.4,2z M20,16.4   c0,2-1.6,3.6-3.6,3.6H7.6c-2,0-3.6-1.6-3.6-3.6V7.6C4,5.6,5.6,4,7.6,4h8.8c2,0,3.6,1.6,3.6,3.6V16.4z" />
+            </g>
+          </svg>
+        </div>
+        <div class="desc">Follow us on facebook, instagram and get promotions</div>
+      </div>
+    </div>
+    <!-- Footer Start -->
+    <div class="footer-wrap">
+      <div class="container-fluid text-light footer bg-light-css">
+        <div class="container py-5">
+          <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+              <h4 class="section-title text-start text-white fw-normal mb-4">
+                Overview
+              </h4>
+              <a class="btn btn-link" href="#">About us</a>
+              <a class="btn btn-link" href="#">Contact us</a>
+              <a class="btn btn-link" href="#">Delivery</a>
+              <a class="btn btn-link" href="#">Quality certification</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h4 class="section-title text-start text-white fw-normal mb-4">
+                Contact
+              </h4>
+              <p class="mb-2">
+                <i class="fa fa-map-marker-alt me-2"></i>123 CMT8 Street, Ward 15, District 3, Ho Chi Minh Province.
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-phone-alt me-2"></i>032 345 6789
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-envelope me-2"></i>seasun.vn@gmail.com
+              </p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h4 class="section-title text-start text-white fw-normal mb-4">
+                Opening
+              </h4>
+              <h6 class="text-light fw-normal">Monday - Saturday</h5>
+                <p>09AM - 09PM</p>
+                <h6 class="text-light fw-normal">Sunday</h6>
+                <p>09AM - 10PM</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <h4 class="section-title text-start text-white fw-normal mb-4">
+                Newsletter
+              </h4>
+              <p>If you have any question or feedback, please feel free to contact us.</p>
+              <div class="position-relative mx-auto" style="max-width: 400px">
+                <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
+                <button type="button" class="btn btn-info py-2 position-absolute top-0 end-0 mt-2 me-2 text-white">
+                  SignUp
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <div class="text-center">@2023 Sea Sun Inc. All right reserved.</div>
+      </div>
+    </div>
+    <a href="#" class="btn btn-lg btn-info btn-lg-square back-to-top"><i class="bi bi-arrow-up text-white"></i></a>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>document.querySelectorAll('.dropdown > a').forEach(e => {
+      e.addEventListener('click', (event) => event.preventDefault())
+    })
+
+    document.querySelectorAll('.mega-dropdown > a').forEach(e => {
+      e.addEventListener('click', (event) => event.preventDefault())
+    })
+
+    document.querySelector('#mb-menu-toggle').addEventListener('click', () => document.querySelector('#header-wrapper').classList.add('active'))
+
+    document.querySelector('#mb-menu-close').addEventListener('click', () => document.querySelector('#header-wrapper').classList.remove('active'))</script>
+  <script>
+    document.querySelectorAll('.dropdown > a').forEach(e => {
+      e.addEventListener('click', (event) => event.preventDefault())
+    })
+
+    document.querySelectorAll('.mega-dropdown > a').forEach(e => {
+      e.addEventListener('click', (event) => event.preventDefault())
+    })
+
+    document.querySelector('#mb-menu-toggle').addEventListener('click', () => document.querySelector('#header-wrapper').classList.add('active'))
+
+    document.querySelector('#mb-menu-close').addEventListener('click', () => document.querySelector('#header-wrapper').classList.remove('active'))
+  </script>
+  <script>
+    document.querySelectorAll('.pdproduct-img-item').forEach(e => {
+      e.addEventListener('click', () => {
+        let img = e.querySelector('img').getAttribute('src')
+        document.querySelector('#pdproduct-img > img').setAttribute('src', img)
+      })
+    })
+
+    document.querySelector('#view-all-description').addEventListener('click', () => {
+      let content = document.querySelector('.pdproduct-detail-description-content')
+      content.classList.toggle('active')
+      document.querySelector('#view-all-description').innerHTML = content.classList.contains('active') ? 'view less' : 'view all'
+    })
+
+    let pdproducts = [
+      {
+        name: 'JBL E55BT KEY BLACK',
+        image1: './images/JBL_E55BT_KEY_BLACK_6175_FS_x1-1605x1605px.png',
+        image2: './images/JBL_LIVE650BTNC_pdproduct Image_Folded_Black.webp',
+        old_price: '400',
+        curr_price: '300'
+      },
+      {
+        name: 'JBL JR 310BT',
+        image1: './images/JBL_JR 310BT_pdproduct Image_Hero_Skyblue.png',
+        image2: './images/JBL_JR 310BT_pdproduct Image_Detail_Skyblue.png',
+        old_price: '400',
+        curr_price: '300'
+      },
+      {
+        name: 'JBL TUNE 750BTNC',
+        image1: './images/kisspng-beats-electronics-headphones-apple-beats-studio-red-headphones.png',
+        image2: './images/JBL_E55BT_KEY_RED_6063_FS_x1-1605x1605px.webp',
+        old_price: '400',
+        curr_price: '300'
+      },
+      {
+        name: 'JBL Horizon',
+        image1: './images/JBLHorizon_001_dvHAMaster.png',
+        image2: './images/JBLHorizon_BLK_002_dvHAMaster.webp',
+        old_price: '400',
+        curr_price: '300'
+      },
+      {
+        name: 'JBL Tune 220TWS',
+        image1: './images/JBL_TUNE220TWS_pdproductImage_Pink_ChargingCaseOpen.png',
+        image2: './images/JBL_TUNE220TWS_pdproductImage_Pink_Back.png',
+        old_price: '400',
+        curr_price: '300'
+      },
+      {
+        name: 'UA Project Rock',
+        image1: './images/190402_E1_FW19_EarbudsWCase_S13_0033-1_1605x1605_HERO.png',
+        image2: './images/190402_E1_FW19_EarbudsWCase_S13_0033-1_1605x1605_BACK.png',
+        old_price: '400',
+        curr_price: '300'
+      },
+    ]
+
+    let pdproduct_list = document.querySelector('#related-pdproducts')
+
+    renderpdproducts = (pdproducts) => {
+      pdproducts.forEach(e => {
+        let prod = `
+            <div class="col-4 col-md-6 col-sm-12">
+                <div class="pdproduct-card">
+                    <div class="pdproduct-card-img">
+                        <img src="${e.image1}" alt="">
+                        <img src="${e.image2}" alt="">
+                    </div>
+                    <div class="pdproduct-card-info">
+                        <div class="pdproduct-btn">
+                            <a href="./pdproduct-detail.html" class="btn-flat btn-hover btn-shop-now">shop now</a>
+                            <button class="btn-flat btn-hover btn-cart-add">
+                                <i class='bx bxs-cart-add'></i>
+                            </button>
+                            <button class="btn-flat btn-hover btn-cart-add">
+                                <i class='bx bxs-heart'></i>
+                            </button>
+                        </div>
+                        <div class="pdproduct-card-name">
+                            ${e.name}
+                        </div>
+                        <div class="pdproduct-card-price">
+                            <span><del>${e.old_price}</del></span>
+                            <span class="curr-price">${e.curr_price}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+        pdproduct_list.insertAdjacentHTML("beforeend", prod)
+      })
+    }
+
+    renderpdproducts(pdproducts)
+  </script>
+</body>
+
+</html>
